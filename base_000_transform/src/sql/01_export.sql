@@ -1,0 +1,1 @@
+\copy (SELECT * FROM public.some_table) to 'output/source_file.csv' with csv
