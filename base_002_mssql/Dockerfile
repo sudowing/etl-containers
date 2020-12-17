@@ -5,6 +5,7 @@ ENV BASHLOG_JSON_PATH='app_json.log'
 ENV BASHLOG_JSON_STOUT=1
 
 ENV HOME=/etl/src
+ENV SQLCMD=/opt/mssql-tools/bin/sqlcmd
 
 WORKDIR $HOME
 COPY src .
