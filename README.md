@@ -69,12 +69,14 @@ BASHLOG_JSON_STOUT=0
         && cd .. \
     && cd base_006_http \
         && docker build -t base_006_http:develop -f ./Dockerfile . \
+    && cd base_007_mongo \
+        && docker build -t base_007_mongo:develop -f ./Dockerfile . \
 && cd ..
 ```
 
 ## List Images
 ```sh
-docker Images
+docker images
 ```
 
 ## Test Images
@@ -99,4 +101,7 @@ docker run base_005_aws_sdk:develop
 
 # base_006_http
 docker run base_006_http:develop
+
+# base_007_mongo
+docker run base_007_mongo:develop
 ```

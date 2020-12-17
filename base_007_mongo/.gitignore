@@ -1,0 +1,10 @@
+# environmental files
+.env
+!template.env
+
+src/input/*
+!src/input/.keep
+
+src/output/*
+!src/output/.keep
+
