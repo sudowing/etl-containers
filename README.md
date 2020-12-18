@@ -49,29 +49,25 @@ BASHLOG_JSON_STOUT=0
 
 ## Build Base Images
 ```sh
-       cd base_000_transform \
-        && docker build -t base_000_transform:develop -f ./Dockerfile . \
-        && cd .. \
-    && cd base_001_postgres \
-        && docker build -t base_001_postgres:develop -f ./Dockerfile . \
-        && cd .. \
-    && cd base_002_mssql \
-        && docker build -t base_002_mssql:develop -f ./Dockerfile . \
-        && cd .. \
-    && cd base_003_filesystem \
-        && docker build -t base_003_filesystem:develop -f ./Dockerfile . \
-        && cd .. \
-    && cd base_004_sftp \
-        && docker build -t base_004_sftp:develop -f ./Dockerfile . \
-        && cd .. \
-    && cd base_005_aws_sdk \
-        && docker build -t base_005_aws_sdk:develop -f ./Dockerfile . \
-        && cd .. \
-    && cd base_006_http \
-        && docker build -t base_006_http:develop -f ./Dockerfile . \
-    && cd base_007_mongo \
-        && docker build -t base_007_mongo:develop -f ./Dockerfile . \
-&& cd ..
+REPOS=(
+    base_000_transform
+    base_001_postgres
+    base_002_mssql
+    base_003_filesystem
+    base_004_sftp
+    base_005_aws_sdk
+    base_006_http
+    base_007_mongo
+)
+for REPO in "${REPOS[@]}"
+do
+   : 
+   echo $REPO;
+   cd $REPO \
+       && docker build -t $REPO:develop -f ./Dockerfile . \
+       && docker tag $REPO:develop $REPO:latest \
+       && cd ..
+done
 ```
 
 ## List Images

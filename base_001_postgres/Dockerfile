@@ -7,6 +7,7 @@ ENV BASHLOG_JSON_STOUT=1
 ENV ETL_LOG_PATH='etl.log'
 
 ENV HOME=/etl/src
+
 WORKDIR $HOME
 COPY src .
 COPY log.sh ..
