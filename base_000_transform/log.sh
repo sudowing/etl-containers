@@ -9,7 +9,6 @@ if [ -n "${BASHLOG_JSON_PATH+set}" ]; then
   touch $BASHLOG_JSON_PATH && rm $BASHLOG_JSON_PATH;
 fi
 
-
 function _log_exception() {
   (
     BASHLOG_FILE=0;
@@ -18,6 +17,14 @@ function _log_exception() {
 
     log 'error' "Logging Exception: ${@}";
   );
+}
+
+# to be invoked at end of dockerized etl scripts to publish stdout & stderr as json strings
+function publish_json_logs() {
+    while read line; do
+        escaped_line=$(echo ${line} | sed 's/"/\\"/g')
+        log info escaped_line;
+    done <${0}
 }
 
 function log() {

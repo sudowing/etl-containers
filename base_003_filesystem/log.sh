@@ -17,6 +17,14 @@ function _log_exception() {
   );
 }
 
+# to be invoked at end of dockerized etl scripts to publish stdout & stderr as json strings
+function publish_json_logs() {
+    while read line; do
+        escaped_line=$(echo ${line} | sed 's/"/\\"/g')
+        log info escaped_line;
+    done <${0}
+}
+
 function log() {
   local date_format="${BASHLOG_DATE_FORMAT:-+%F %T}";
   local date="$(date "${date_format}")";
