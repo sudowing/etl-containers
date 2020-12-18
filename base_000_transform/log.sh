@@ -24,7 +24,7 @@ function publish_json_logs() {
     while read line; do
         ESCAPED_LINE=$(echo ${line} | sed 's/"/\\"/g')
         log info $ESCAPED_LINE;
-    done <${0}
+    done <${1}
 }
 
 function log() {
