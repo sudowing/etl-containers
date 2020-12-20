@@ -4,6 +4,7 @@ This image provides generic functionality that is to be built upon.
 
 Applications implementing this image have access to:
 - sqlcmd
+- bcp
 
 # Docker Image Development & Publication
 
