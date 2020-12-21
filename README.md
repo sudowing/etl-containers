@@ -58,6 +58,7 @@ REPOS=(
     base_005_aws_sdk
     base_006_http
     base_007_mongo
+    base_008_snowflake
 )
 for REPO in "${REPOS[@]}"
 do
@@ -100,4 +101,7 @@ docker run base_006_http:develop
 
 # base_007_mongo
 docker run base_007_mongo:develop
+
+# base_008_snowflake
+docker run base_008_snowflake:develop
 ```
