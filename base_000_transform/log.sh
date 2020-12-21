@@ -20,11 +20,23 @@ function _log_exception() {
 }
 
 # to be invoked at end of dockerized etl scripts to publish stdout & stderr as json strings
-function publish_json_logs() {
+function publish_json_logs_info() {
     while read line; do
         ESCAPED_LINE=$(echo ${line} | sed 's/"/\\"/g')
         log info $ESCAPED_LINE;
     done <${1}
+}
+
+function publish_json_logs_error() {
+    while read line; do
+        ESCAPED_LINE=$(echo ${line} | sed 's/"/\\"/g')
+        log error $ESCAPED_LINE;
+    done <${1}
+}
+
+function publish_json_logs() {
+    publish_json_logs_info $ETL_LOG_STDOUT;
+    publish_json_logs_error $ETL_LOG_STDERR;
 }
 
 function log() {

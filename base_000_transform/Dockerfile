@@ -11,7 +11,8 @@ ENV BASHLOG_JSON=1
 ENV BASHLOG_JSON_PATH='app_json.log'
 ENV BASHLOG_JSON_STOUT=1
 
-ENV ETL_LOG_PATH='etl.log'
+ENV ETL_LOG_STDOUT='etl.stdout.log'
+ENV ETL_LOG_STDERR='etl.stderr.log'
 
 ENV HOME=/etl/src
 

@@ -6,7 +6,8 @@ ENV BASHLOG_JSON_STOUT=1
 
 ENV PATH="${PATH}:/opt/mssql-tools/bin"
 
-ENV ETL_LOG_PATH='etl.log'
+ENV ETL_LOG_STDOUT='etl.stdout.log'
+ENV ETL_LOG_STDERR='etl.stderr.log'
 
 ENV HOME=/etl/src
 
