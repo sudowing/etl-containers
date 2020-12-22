@@ -23,4 +23,6 @@ COPY log.sh ..
 # copy into /etl
 COPY etl_utils.py /etl/etl_utils.py
 
+RUN touch $ETL_LOG_STDOUT && touch $ETL_LOG_STDERR
+
 ENTRYPOINT [ "/etl/src/etl.process.sh" ]

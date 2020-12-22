@@ -17,5 +17,7 @@ RUN chmod -R 775 /entrypoint.sh
 COPY src .
 COPY log.sh /log.sh
 
+RUN touch $ETL_LOG_STDOUT && touch $ETL_LOG_STDERR
+
 ENTRYPOINT [ "/entrypoint.sh" ]
 CMD [ "bash", "/etl/src/etl.process.sh" ]
