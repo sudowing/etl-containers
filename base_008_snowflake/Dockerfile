@@ -33,4 +33,6 @@ RUN snowsql -v
 COPY src .
 COPY log.sh ..
 
+RUN touch $ETL_LOG_STDOUT && touch $ETL_LOG_STDERR
+
 ENTRYPOINT [ "/etl/src/etl.process.sh" ]

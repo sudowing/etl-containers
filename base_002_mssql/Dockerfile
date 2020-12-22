@@ -20,4 +20,6 @@ RUN chmod -R 775 .
 
 USER mssql
 
+RUN touch $ETL_LOG_STDOUT && touch $ETL_LOG_STDERR
+
 ENTRYPOINT [ "/etl/src/etl.process.sh" ]
