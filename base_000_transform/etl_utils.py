@@ -1,3 +1,4 @@
+import json
 import logging
 
 from pythonjsonlogger import jsonlogger
@@ -13,3 +14,11 @@ def get_logger(log_level):
     logger.addHandler(logHandler)
     return logger
 
+def read_json(filename):
+    with open(filename) as f:
+        return json.load(f)
+
+def write_file(filename, data):
+    f = open(filename, "w")
+    f.write(data)
+    f.close()

@@ -23,16 +23,11 @@ docker run -it base_000_transform:develop
 ```sh
 docker tag \
 	base_000_transform:develop \
-	base_000_transform:master
-
-docker tag \
-	base_000_transform:develop \
 	base_000_transform:latest
 ```
 
 ## Publish
 ```sh
-docker push base_000_transform:master
 docker push base_000_transform:latest
 ```
 
