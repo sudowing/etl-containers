@@ -62,7 +62,6 @@ REPOS=(
 )
 for REPO in "${REPOS[@]}"
 do
-   : 
    echo $REPO;
    cd $REPO \
        && docker build -t $REPO:develop -f ./Dockerfile . \
