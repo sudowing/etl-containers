@@ -5,7 +5,6 @@
 log info 'EXPORT [START]';
 snowsql \
     –accountname $SF_ACCOUNT_NAME \
-    –username $SF_USERNAME \
     –dbname $SF_DB_NAME \
     –schemaname $SF_SCHEMA_NAME \
     –rolename $SF_ROLE_NAME \
@@ -18,7 +17,6 @@ log info 'EXPORT [COMPLETE]';
 log info 'LOAD [START]';
 snowsql \
     –accountname $SF_ACCOUNT_NAME \
-    –username $SF_USERNAME \
     –dbname $SF_DB_NAME \
     –schemaname $SF_SCHEMA_NAME \
     –rolename $SF_ROLE_NAME \

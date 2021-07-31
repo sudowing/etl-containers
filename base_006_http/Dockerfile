@@ -3,7 +3,7 @@ FROM python:3-slim
 RUN apt-get update
 RUN apt-get -y install jq curl
 
-RUN pip3 install python-json-logger
+RUN pip3 install python-json-logger pandas basket-case requests
 
 ENV PYTHONPATH "${PYTHONPATH}:/etl"
 
@@ -15,9 +15,6 @@ ENV ETL_LOG_STDOUT='/tmp/etl.stdout.log'
 ENV ETL_LOG_STDERR='/tmp/etl.stderr.log'
 
 ENV HOME=/etl/src
-
-COPY requirements.txt .
-RUN pip3 install -r requirements.txt
 
 WORKDIR $HOME
 COPY src .
