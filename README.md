@@ -87,7 +87,7 @@ BASHLOG_JSON_STOUT=0
 
 # <a id="role_of_docker_volumes"></a> Role of Docker Volumes
 
-The apps utilize dumb I/O -- reading & writing only to child input/output directories. When deployed, can mount a Docker Volume backed by an AWS S3 bucket.
+The apps utilize dumb I/O -- reading & writing only to child input/output directories. When deployed, can mount a Docker Volume (backed by an AWS S3 bucket) onto either the `input` and/or `output` locations.
 
 While there are probably many methods for accomplishing this, I rely on on [REX-Ray Docker Plugin](https://rexray.readthedocs.io/en/v0.9.0/user-guide/docker-plugins/).
 
